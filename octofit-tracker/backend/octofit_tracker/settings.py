@@ -33,6 +33,8 @@ codespace_host = f"{codespace_name}-8000.app.github.dev" if codespace_name else 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 if codespace_host:
     ALLOWED_HOSTS.append(codespace_host)
+    # Allow wildcard for subdomains in Codespaces
+    ALLOWED_HOSTS.append('.app.github.dev')
 
 
 # Application definition
